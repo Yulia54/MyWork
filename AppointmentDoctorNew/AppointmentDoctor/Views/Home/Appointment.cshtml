@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Запись на прием</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        div {
+            background-color: #fff;
+            padding: 20px;
+            width: 300px;
+        }
+        h3 {
+            text-align: center;
+        }
+        input[type="submit"] {
+            background-color: #1846b0;
+            color: white;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Форма для записи</h3>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.IdDoc" name="IdDoc" />
+            <table>
+                <tr>
+                    <td><p>Введите свою фамилию</p></td>
+                    <td><input type="text" name="Surname" required/></td>
+                </tr>
+                <tr>
+                    <td><p>Введите свое имя</p></td>
+                    <td><input type="text" name="Name" required/></td>
+                </tr>
+                <tr>
+                    <td><p>Введите свое отчество</p></td>
+                    <td><input type="text" name="Otchestvo" required/></td>
+                </tr>
+                <tr>
+                    <td><p>Введите номер полиса</p></td>
+                    <td><input type="text" name="Policy" required/></td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /></td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Поликлиника</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: medium solid black;
+        }
+        td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align:center;
+        }
+        tr{
+            text-align:center;
+        }
+        tr:nth-child(even) {
+           background-color: lightblue;
+        }
+        a {
+            color: purple;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        a:active {
+            color: green; 
+        }
+        </style>
+</head>
+<body>
+    <div>
+        <h3 align="center">Список врачей</h3>
+        <table>
+            <tr>
+                <td><p>ФИО</p></td>
+                <td><p>Специальность</p></td>
+                <td><p>Стаж</p></td>
+                <td><p>Доступное время приема</p></td>
+                <td></td>
+            </tr>
+            @foreach (var doctor in ViewBag.Doctors)
+            {
+                <tr>
+                    <td><p>@doctor.FIO</p></td>
+                    <td><p>@doctor.Speciality</p></td>
+                    <td><p>@doctor.Stazh</p></td>
+                    <td><p>@doctor.ReceptionTime</p></td>
+                    <td><p><a href="/Home/Appointment/@doctor.IdDoc">Записаться на прием</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
